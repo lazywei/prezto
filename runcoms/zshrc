@@ -11,3 +11,78 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+###############
+#    ALIAS    #
+###############
+
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+hash -d gdrive=/Volumes/jetdrive/GoogleDrive
+hash -d jdrive=/Volumes/jetdrive
+
+alias start_psql="pg_ctl -D /usr/local/var/postgres start"
+alias start_memcached="memcached -d"
+alias start_mysql="mysql.server start"
+
+alias zp_git="vim ~/.zprezto/modules/git/alias.zsh"
+
+###############
+#   GENERAL   #
+###############
+# Set to this to use case-sensitive completion
+# CASE_SENSITIVE="true"
+
+# Comment this out to disable weekly auto-update checks
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment following line if you want to disable colors in ls
+# DISABLE_LS_COLORS="true"
+
+# Uncomment following line if you want to disable autosetting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+# COMPLETION_WAITING_DOTS="true"
+
+export VISUAL=/usr/local/bin/vim
+export EDITOR="$VISUAL"
+export GIT_EDITOR="$VISUAL"
+
+###############
+#    PATH     #
+###############
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+export PATH=$HOME/bin:$PATH
+
+# For golang
+export GOPATH=$HOME/GoProjects
+export PATH=$PATH:$GOPATH/bin
+
+export PYLEARN2_DATA_PATH=~/Research/pl_data
+
+# Android SDK
+export PATH=${PATH}:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/tools
+
+###############
+#     FZF     #
+###############
+
+# Setting ag as the default source for fzf
+export FZF_DEFAULT_COMMAND='ag -l -g ""'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+###############
+#    LPASS    #
+###############
+
+# LastPass Alfred Workflow
+# https://github.com/bachya/lp-vault-manager#preventing-future-master-login-requests
+export LPASS_AGENT_TIMEOUT=0
+
+PERL_MB_OPT="--install_base \"/Users/lazywei/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/lazywei/perl5"; export PERL_MM_OPT;
