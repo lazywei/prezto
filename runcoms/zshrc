@@ -26,7 +26,7 @@ alias start_psql="pg_ctl -D /usr/local/var/postgres start"
 alias start_memcached="memcached -d"
 alias start_mysql="mysql.server start"
 
-alias zp_git="vim ~/.zprezto/modules/git/alias.zsh"
+alias zp_git="nvim ~/.zprezto/modules/git/alias.zsh"
 
 ###############
 #   GENERAL   #
@@ -46,7 +46,7 @@ alias zp_git="vim ~/.zprezto/modules/git/alias.zsh"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
 
-export VISUAL=/usr/local/bin/vim
+export VISUAL=/Users/lazywei/Projects/neovim/build/bin/nvim
 export EDITOR="$VISUAL"
 export GIT_EDITOR="$VISUAL"
 
@@ -70,6 +70,8 @@ export PATH=${PATH}:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/t
 ###############
 #     FZF     #
 ###############
+
+export PATH=$HOME/Projects/fzf-fs:$PATH
 
 # Setting ag as the default source for fzf
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
@@ -140,7 +142,6 @@ z() {
   fi
 }
 
-
 ###############
 #    LPASS    #
 ###############
@@ -153,7 +154,24 @@ export LPASS_AGENT_TIMEOUT=0
 #    NVIM     #
 ###############
 
-alias nvim="VIMRUNTIME=/Users/lazywei/Projects/neovim/runtime /Users/lazywei/Projects/neovim/build/bin/nvim"
+export VIMRUNTIME=/Users/lazywei/Projects/neovim/runtime
+export PATH=/Users/lazywei/Projects/neovim/build/bin:$PATH
+
+# for quick build
+alias qb_nvim="rm -rf build && make clean && make CMAKE_BUILD_TYPE=Release"
+alias vim="nvim"
+
+###############
+#   DIRENV    #
+###############
+
+eval "$(direnv hook zsh)"
+
+###############
+#    JAVA     #
+###############
+
+export CLASSPATH=/Users/lazywei/Research/mulan/lib/weka-3.7.10.jar:$CLASSPATH
 
 ###############
 
