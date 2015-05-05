@@ -177,10 +177,9 @@ export CLASSPATH=/Users/lazywei/Research/mulan/lib/weka-3.7.10.jar:$CLASSPATH
 #  LOLCOMMITS #
 ###############
 
-export LOLCOMMITS_ANIMATE=3
-export LOLCOMMITS_DELAY=1
-export LOLCOMMITS_FORK=1
 export LOLCOMMITS_DIR=$HOME/Dropbox/lolcommits
+alias lcm_en_an='lolcommits --enable --fork --animate=1'
+alias lcm_en='lolcommits --enable --fork'
 
 ###############
 
