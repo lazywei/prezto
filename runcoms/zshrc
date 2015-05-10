@@ -182,6 +182,12 @@ alias lcm_en_an='lolcommits --enable --fork --animate=1'
 alias lcm_en='lolcommits --enable --fork'
 
 ###############
+#    PYENV    #
+###############
+
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+###############
 
 PERL_MB_OPT="--install_base \"/Users/lazywei/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/lazywei/perl5"; export PERL_MM_OPT;
