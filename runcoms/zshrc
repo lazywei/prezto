@@ -46,7 +46,7 @@ alias zp_git="nvim ~/.zprezto/modules/git/alias.zsh"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
 
-export VISUAL=/Users/lazywei/Projects/neovim/build/bin/nvim
+export VISUAL=/Users/lazywei/Projects/neovim/bin/nvim
 export EDITOR="$VISUAL"
 export GIT_EDITOR="$VISUAL"
 
@@ -154,11 +154,12 @@ export LPASS_AGENT_TIMEOUT=0
 #    NVIM     #
 ###############
 
-export VIMRUNTIME=/Users/lazywei/Projects/neovim/runtime
-export PATH=/Users/lazywei/Projects/neovim/build/bin:$PATH
+export PATH=/Users/lazywei/Projects/neovim/bin:$PATH
 
 # for quick build
-alias qb_nvim="rm -rf build && make clean && make CMAKE_BUILD_TYPE=Release"
+# alias qb_nvim="rm -rf build && make clean && make CMAKE_BUILD_TYPE=Release"
+alias qb_nvim="rm -rf build && make clean && make CMAKE_BUILD_TYPE=Release \
+  CMAKE_EXTRA_FLAGS=\"-DCMAKE_INSTALL_PREFIX:PATH=$HOME/Projects/neovim\" install"
 alias vim="nvim"
 
 ###############
