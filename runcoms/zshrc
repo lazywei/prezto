@@ -67,6 +67,9 @@ export PYLEARN2_DATA_PATH=~/Research/pl_data
 # Android SDK
 export PATH=${PATH}:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/tools
 
+# Haskell
+export PATH=$HOME/.cabal/bin:$PATH
+
 ###############
 #     FZF     #
 ###############
